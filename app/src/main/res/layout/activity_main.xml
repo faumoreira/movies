@@ -4,15 +4,142 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_margin="8dp"
+    tools:context=".ui.MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/btRefresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Atualizar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/poster1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="TODO"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btRefresh" />
+
+    <TextView
+        android:id="@+id/txtTitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Aguarde..."
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/btRemove1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/poster1"
+        app:layout_constraintTop_toBottomOf="@id/btRefresh" />
+
+    <TextView
+        android:id="@+id/txtOriginalTitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:text="Aguarde..."
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toStartOf="@+id/btRemove1"
+        app:layout_constraintStart_toEndOf="@id/poster1"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle1" />
+
+    <Button
+        android:id="@+id/btRemove1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:text="X"
+        app:layout_constraintBottom_toBottomOf="@id/poster1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btRefresh" />
+
+    <ImageView
+        android:id="@+id/poster2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/poster1"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/txtTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aguarde..."
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/poster1"
+        app:layout_constraintEnd_toStartOf="@+id/btRemove1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/poster2" />
+
+    <TextView
+        android:id="@+id/txtOriginalTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:text="Aguarde..."
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toStartOf="@+id/btRemove2"
+        app:layout_constraintStart_toEndOf="@id/poster2"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle2" />
+
+
+    <Button
+        android:id="@+id/btRemove2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="X"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/poster2"
+        app:layout_constraintTop_toBottomOf="@id/poster1" />
+
+    <ImageView
+        android:id="@+id/poster3"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="TODO"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/poster2" />
+
+    <TextView
+        android:id="@+id/txtTitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aguarde..."
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/poster2"
+        app:layout_constraintEnd_toStartOf="@+id/btRemove2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/poster3" />
+
+    <TextView
+        android:id="@+id/txtOriginalTitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:text="Aguarde..."
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toStartOf="@+id/btRemove3"
+        app:layout_constraintStart_toEndOf="@id/poster3"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle3" />
+
+
+    <Button
+        android:id="@+id/btRemove3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="X"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/poster3"
+        app:layout_constraintTop_toBottomOf="@id/poster2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
