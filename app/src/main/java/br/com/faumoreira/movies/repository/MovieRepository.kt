@@ -37,7 +37,7 @@ class MovieRepository {
         val locale = Locale.getDefault()
         language = locale.language + "-" + locale.country
     }
-    fun loadMovies(): Observable<Movie>? {
+    fun listMovies(): Observable<Movie>? {
         return service.listMovies(createQueryMap())
             .flatMap { filmResults -> Observable.from(filmResults.results) }
             .map { film ->

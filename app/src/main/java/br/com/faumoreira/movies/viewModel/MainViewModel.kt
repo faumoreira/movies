@@ -12,23 +12,26 @@ import kotlin.random.Random
 
 class MainViewModel( application: Application
 ) : AndroidViewModel(application) {
-    val api = MovieRepository()
-    val movies : ArrayList<Movie> = ArrayList()
 
+    val movieRepository = MovieRepository()
+    val movies : ArrayList<Movie> = ArrayList()
     var movie1 : MutableLiveData<Movie> = MutableLiveData()
     var movie2 : MutableLiveData<Movie> = MutableLiveData()
     var movie3 : MutableLiveData<Movie> = MutableLiveData()
     var error : MutableLiveData<String> = MutableLiveData()
 
     fun loadMovies(){
-        api.loadMovies()?.subscribeOn(Schedulers.io())?.observeOn(AndroidSchedulers.mainThread())
+        movieRepository.listMovies()
+            ?.subscribeOn(Schedulers.io())
+            ?.observeOn(AndroidSchedulers.mainThread())
             ?.subscribe ({ movie ->
                 movies.add(movie)
             }, { e ->
                 Log.e("teste","",e)
                 error.value = "Erro na busca de filmes: ${e.message}"
             },{
-               refresh()
+                error.value = null
+                refresh()
             })
     }
 

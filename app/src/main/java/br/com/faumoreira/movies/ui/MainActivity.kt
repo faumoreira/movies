@@ -2,6 +2,7 @@ package br.com.faumoreira.movies.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import br.com.faumoreira.movies.R
@@ -32,11 +33,31 @@ class MainActivity : AppCompatActivity() {
         }
 
         bindMovies()
+        bindError()
 
         viewModel.loadMovies()
     }
 
+    fun bindError(){
+        viewModel.error.observe(this, Observer {
+            if(it == null) {
+                areaMovies.visibility = View.VISIBLE
+                areaError.visibility = View.GONE
+            }else{
+                areaMovies.visibility = View.GONE
+                areaError.visibility = View.VISIBLE
+                txtMsg.text = it
+            }
+        })
+
+        btTryAgain.setOnClickListener{
+            txtMsg.text = "Aguarde..."
+            viewModel.loadMovies()
+        }
+    }
+
     fun bindMovies(){
+
         viewModel.movie1.observe(this, Observer {
             txtTitle1.text = it.title
             txtOriginalTitle1.text = it.originalTitleAndDate
