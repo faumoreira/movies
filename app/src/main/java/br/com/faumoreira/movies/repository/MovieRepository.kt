@@ -43,9 +43,8 @@ class MovieRepository {
             .map { film ->
                 Movie(
                     film.title,
-                    film.originalTitle,
-                    2019,
-                    BASE_IMAGES_URL + "/w300" + film.posterPath
+                    "${film.originalTitle}, ${film.date}",
+                    "${BASE_IMAGES_URL}/w300${film.posterPath}"
                 )
             }
     }
